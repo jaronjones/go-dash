@@ -1,0 +1,16 @@
+<!-- templates/table.html -->
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Value</th>
+    </tr>
+    {{range .}}
+    <tr>
+        <td>{{.ID}}</td>
+        <td>{{.Name}}</td>
+        <td>{{.Value}}</td>
+    </tr>
+    {{end}}
+</table>
+
