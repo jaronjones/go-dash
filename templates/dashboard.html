@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>Go Dash</title>
     <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/sse.js"></script>
   </head>
   <body>
     <h1>Dashboard</h1>
@@ -16,6 +17,10 @@
     <button hx-get="/table" hx-trigger="click" hx-target="#table-container">Load Table</button>
     <div id="table-container">
       <!-- Table data will be loaded here -->
+    </div>
+    <div hx-ext="sse" sse-connect="/events" hx-trigger="sse:message">
+      <!-- SSE messages will be displayed here -->
+      <div id="sse-messages"></div>
     </div>
   </body>
 </html>
